@@ -19,6 +19,7 @@
         <maven>${version.maven}</maven>
     </prerequisites>
     <modules>
+        <module>webapp</module>
     </modules>
     <scm>
         <connection>scm:git:https://github.com/sazzer/ktwebmud.git</connection>
@@ -54,6 +55,11 @@
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
                 <version>1.1.7</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>3.1.0</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
