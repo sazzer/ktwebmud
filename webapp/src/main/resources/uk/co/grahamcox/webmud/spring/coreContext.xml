@@ -2,10 +2,32 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
     <context:property-placeholder />
 
     <bean id="clock" class="java.time.Clock" factory-method="systemUTC" />
+
+    <bean id="objectMapper" class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean">
+        <property name="modules">
+            <list>
+                <bean class="com.fasterxml.jackson.datatype.jsr310.JavaTimeModule" />
+                <bean class="com.fasterxml.jackson.datatype.jdk8.Jdk8Module" />
+                <bean class="com.fasterxml.jackson.module.kotlin.KotlinModule" />
+            </list>
+        </property>
+        <property name="featuresToEnable">
+            <list>
+                <util:constant static-field="com.fasterxml.jackson.databind.SerializationFeature.INDENT_OUTPUT"/>
+            </list>
+        </property>
+        <property name="featuresToDisable">
+            <list>
+                <util:constant static-field="com.fasterxml.jackson.databind.SerializationFeature.WRITE_DATES_AS_TIMESTAMPS"/>
+            </list>
+        </property>
+    </bean>
 </beans>
