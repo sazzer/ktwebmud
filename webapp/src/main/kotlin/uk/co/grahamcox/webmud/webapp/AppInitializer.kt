@@ -3,6 +3,7 @@ package uk.co.grahamcox.worldbuilder.webapp
 import org.slf4j.LoggerFactory
 import org.springframework.web.WebApplicationInitializer
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+import org.springframework.web.context.support.XmlWebApplicationContext
 import org.springframework.web.servlet.DispatcherServlet
 import javax.servlet.ServletContext
 
@@ -20,11 +21,13 @@ open class AppInitializer : WebApplicationInitializer {
     override fun onStartup(servletContext : ServletContext) {
         LOG.info("Configuring the application")
 
-        val coreContext = AnnotationConfigWebApplicationContext()
+        val coreContext = XmlWebApplicationContext()
+        coreContext.setConfigLocation("classpath:/uk/co/grahamcox/webmud/spring/coreContext.xml")
         coreContext.refresh()
 
-        val webappContext = AnnotationConfigWebApplicationContext()
+        val webappContext = XmlWebApplicationContext()
         webappContext.parent = coreContext
+        webappContext.setConfigLocation("classpath:/uk/co/grahamcox/webmud/webapp/spring/webappContext.xml")
 
         val servlet = servletContext.addServlet("dispatcher", DispatcherServlet(webappContext))
         servlet.addMapping("/")
