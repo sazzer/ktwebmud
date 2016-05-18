@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <import resource="classpath:uk/co/grahamcox/webmud/spring/coreContext.xml" />
+    <import resource="classpath:uk/co/grahamcox/webmud/webapp/spring/webappContext.xml" />
+
+    <beans profile="test">
+        <bean id="clock" class="uk.co.grahamcox.webmud.webapp.FixedClockFactoryBean">
+            <constructor-arg name="time" value="2016-05-18T13:08:00Z" />
+        </bean>
+    </beans>
+</beans>

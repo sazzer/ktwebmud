@@ -9,8 +9,6 @@
 
     <context:property-placeholder />
 
-    <bean id="clock" class="java.time.Clock" factory-method="systemUTC" />
-
     <bean id="objectMapper" class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean">
         <property name="modules">
             <list>
@@ -30,4 +28,9 @@
             </list>
         </property>
     </bean>
+
+    <beans profile="!test">
+        <bean id="clock" class="java.time.Clock" factory-method="systemUTC" />
+    </beans>
+
 </beans>
