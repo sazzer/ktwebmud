@@ -16,6 +16,7 @@
     </mvc:annotation-driven>
 
     <context:property-placeholder />
+    <context:annotation-config />
 
     <import resource="controllers.xml" />
 </beans>
