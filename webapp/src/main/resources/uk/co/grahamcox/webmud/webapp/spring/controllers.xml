@@ -5,13 +5,20 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket.xsd">
 
+    <websocket:message-broker>
+        <websocket:stomp-endpoint path="/api/websocket/stomp" allowed-origins="*">
+        </websocket:stomp-endpoint>
+
+        <websocket:simple-broker prefix="/topic,/queue" />
+
+        <websocket:message-converters>
+            <bean class="org.springframework.messaging.converter.MappingJackson2MessageConverter">
+                <property name="objectMapper" ref="objectMapper" />
+            </bean>
+        </websocket:message-converters>
+     </websocket:message-broker>
+
     <bean class="uk.co.grahamcox.webmud.webapp.DebugController">
         <constructor-arg name="clock" ref="clock" />
     </bean>
-
-    <bean id="webSocketHandler" class="uk.co.grahamcox.webmud.webapp.websocket.WebSocketHandler" />
-
-    <websocket:handlers allowed-origins="*">
-        <websocket:mapping path="/api/websocket" handler="webSocketHandler"/>
-    </websocket:handlers>
 </beans>
