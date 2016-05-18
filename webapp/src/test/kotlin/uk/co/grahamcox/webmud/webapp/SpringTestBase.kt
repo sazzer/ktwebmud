@@ -4,6 +4,7 @@ import org.junit.Before
 import org.junit.ClassRule
 import org.junit.Rule
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.messaging.support.AbstractSubscribableChannel
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.context.junit4.rules.SpringClassRule
@@ -40,6 +41,10 @@ open class SpringTestBase {
     /** The Mock MVC Wrapper */
     private lateinit var mockMvc: MockMvc
 
+    /** The WebSocket Client to use */
+    @Autowired
+    lateinit var webSocketClient: WebSocketClient
+
     /**
      * Ensure that we have a Mock MVC Wrapper before the tests run
      */
@@ -47,6 +52,8 @@ open class SpringTestBase {
     fun setupMockMvc() {
         mockMvc = MockMvcBuilders.webAppContextSetup(webAppContext)
                 .build()
+
+        webSocketClient.reset()
     }
 
 

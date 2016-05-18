@@ -14,5 +14,7 @@
         <bean id="clock" class="uk.co.grahamcox.webmud.webapp.FixedClockFactoryBean">
             <constructor-arg name="time" value="2016-05-18T13:08:00Z" />
         </bean>
+
+        <bean id="webSocketClient" class="uk.co.grahamcox.webmud.webapp.WebSocketClient" />
     </beans>
 </beans>
