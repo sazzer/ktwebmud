@@ -6,9 +6,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
                            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
-    
-    <mvc:resources mapping="/index.html" location="classpath:/static/" order="1" />
 
-    <!-- Anything that is not covered somewhere else loads the Index page. This gives us URL Routing -->
-    <mvc:view-controller path="/**" view-name="/index.html" status-code="200" />
+
+    <mvc:status-controller path="/api/**" status-code="404" />
+
+    <mvc:resources mapping="/static/**" location="classpath:/static/" order="1" />
+    <mvc:view-controller path="/" view-name="/static/index.html" />
 </beans>
