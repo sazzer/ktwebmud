@@ -1,4 +1,3 @@
-import {second} from './second';
+import {renderUi} from './ui';
 
-const name = 'world';
-console.log(second(name));
+renderUi();

@@ -1,4 +1,5 @@
 const BABEL_PRESETS = ['es2015'];
+const BABEL_PLUGINS = ['transform-react-jsx'];
 
 module.exports = function(grunt) {
     require('time-grunt')(grunt);
@@ -9,7 +10,7 @@ module.exports = function(grunt) {
         babel: {
             options: {
                 sourceMap: false,
-                plugins: [],
+                plugins: BABEL_PLUGINS,
                 presets: BABEL_PRESETS
             },
             main: {
@@ -73,6 +74,7 @@ module.exports = function(grunt) {
                             exclude: /(node_modules)/,
                             loader: 'babel',
                             query: {
+                                plugins: BABEL_PLUGINS,
                                 presets: BABEL_PRESETS
                             }
                         }
