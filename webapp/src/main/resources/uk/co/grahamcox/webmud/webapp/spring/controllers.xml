@@ -18,6 +18,7 @@
         </websocket:message-converters>
      </websocket:message-broker>
 
+
     <bean class="uk.co.grahamcox.webmud.webapp.DebugController">
         <constructor-arg name="clock" ref="clock" />
     </bean>

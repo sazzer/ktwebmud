@@ -6,18 +6,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
                            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    
+    <mvc:resources mapping="/index.html" location="classpath:/static/" order="1" />
 
-    <mvc:annotation-driven>
-        <mvc:message-converters>
-            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
-                <property name="objectMapper" ref="objectMapper" />
-            </bean>
-        </mvc:message-converters>
-    </mvc:annotation-driven>
-
-    <context:property-placeholder />
-    <context:annotation-config />
-
-    <import resource="controllers.xml" />
-    <import resource="views.xml" />
+    <!-- Anything that is not covered somewhere else loads the Index page. This gives us URL Routing -->
+    <mvc:view-controller path="/**" view-name="/index.html" status-code="200" />
 </beans>
