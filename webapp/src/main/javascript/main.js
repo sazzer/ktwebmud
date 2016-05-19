@@ -1,4 +1,4 @@
 import {second} from './second';
 
 const name = 'world';
-second(name);
+console.log(second(name));

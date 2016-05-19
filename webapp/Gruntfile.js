@@ -1,9 +1,35 @@
+const BABEL_PRESETS = ['es2015'];
+
 module.exports = function(grunt) {
     require('time-grunt')(grunt);
     require('jit-grunt')(grunt);
 
     // Keep the plugins in alphabetical order
     grunt.initConfig({
+        babel: {
+            options: {
+                sourceMap: false,
+                plugins: [],
+                presets: BABEL_PRESETS
+            },
+            main: {
+                files: [{
+                    expand: true,
+                    cwd: 'src/main/javascript',
+                    src: ['**/*.js'],
+                    // This hack means that the test code sees a module called 'webmud' containing the code to be tested
+                    dest: 'target/javascript/node_modules/webmud'
+                }]
+            },
+            test: {
+                files: [{
+                    expand: true,
+                    cwd: 'src/test/javascript',
+                    src: ['**/*.js'],
+                    dest: 'target/javascript/test'
+                }]
+            }
+        },
         eslint: {
             options: {
                 configFile: 'eslintrc'
@@ -18,6 +44,16 @@ module.exports = function(grunt) {
         jscpd: {
             main: {
                 path: 'src/main/javascript'
+            }
+        },
+        mochaTest: {
+            options: {
+                reporter: 'spec'
+            },
+            test: {
+                src: [
+                    'target/javascript/test/**/*.spec.js'
+                ]
             }
         },
         webpack: {
@@ -37,9 +73,7 @@ module.exports = function(grunt) {
                             exclude: /(node_modules)/,
                             loader: 'babel',
                             query: {
-                                presets: [
-                                    'es2015'
-                                ]
+                                presets: BABEL_PRESETS
                             }
                         }
                     ]
@@ -57,4 +91,5 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('build', ['eslint:main', 'jscpd:main', 'webpack:main']);
+    grunt.registerTask('test', ['babel:main', 'babel:test', 'mochaTest:test']);
 };

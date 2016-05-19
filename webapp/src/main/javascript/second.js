@@ -1,3 +1,3 @@
 export function second(name) {
-    console.log(`Hello, ${name}`);
+    return(`Hello, ${name}`);
 }
