@@ -14,8 +14,13 @@ module.exports = function(grunt) {
                     src: ['src/main/javascript/**/*.js']
                 }]
             }
+        },
+        jscpd: {
+            main: {
+                path: 'src/main/javascript'
+            }
         }
     });
 
-    grunt.registerTask('build', ['eslint:main']);
+    grunt.registerTask('build', ['eslint:main', 'jscpd:main']);
 };
