@@ -4,7 +4,18 @@ module.exports = function(grunt) {
 
     // Keep the plugins in alphabetical order
     grunt.initConfig({
+        eslint: {
+            options: {
+                configFile: 'eslintrc'
+            },
+            main: {
+                files: [{
+                    expand: true,
+                    src: ['src/main/javascript/**/*.js']
+                }]
+            }
+        }
     });
 
-    grunt.registerTask('build', []);
+    grunt.registerTask('build', ['eslint:main']);
 };
