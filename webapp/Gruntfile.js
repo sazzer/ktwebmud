@@ -19,8 +19,42 @@ module.exports = function(grunt) {
             main: {
                 path: 'src/main/javascript'
             }
+        },
+        webpack: {
+            main: {
+                entry: {
+                    main: './src/main/javascript/main.js'
+                },
+                output: {
+                    path: 'target/classes/static/js',
+                    filename: '[name].js',
+                    sourceMapFilename: '[file].map'
+                },
+                module: {
+                    loaders: [
+                        {
+                            test: /\.jsx?$/,
+                            exclude: /(node_modules)/,
+                            loader: 'babel',
+                            query: {
+                                presets: [
+                                    'es2015'
+                                ]
+                            }
+                        }
+                    ]
+                },
+                stats: {
+                    colors: true
+                },
+                progress: true,
+                failOnError: true,
+                inline: false,
+                hot: false,
+                devtool: 'source-map'
+            }
         }
     });
 
-    grunt.registerTask('build', ['eslint:main', 'jscpd:main']);
+    grunt.registerTask('build', ['eslint:main', 'jscpd:main', 'webpack:main']);
 };
