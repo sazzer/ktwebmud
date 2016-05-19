@@ -1,0 +1,15 @@
+{
+  "name": "ktwebmud",
+  "version": "1.0.0",
+  "description": "WebMud Client Assets",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "jit-grunt": "^0.10.0",
+    "time-grunt": "^1.3.0"
+  },
+  "scripts": {},
+  "author": "Graham Cox <graham@grahamcox.co.uk>",
+  "license": "ISC"
+}
