@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "WebMud Client Assets",
   "dependencies": {
+    "bootstrap": "^3.3.6",
     "i18next": "^3.1.0",
     "i18next-browser-languagedetector": "^0.3.0",
     "i18next-xhr-backend": "^0.5.4",
+    "jquery": "^2.2.3",
     "react": "^15.0.2",
     "react-dom": "^15.0.2"
   },
@@ -19,6 +21,7 @@
     "grunt": "^1.0.1",
     "grunt-babel": "^6.0.0",
     "grunt-cli": "^1.2.0",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-eslint": "^18.1.0",
     "grunt-i18next": "0.0.2",
     "grunt-jscpd": "0.0.11",

@@ -1,3 +1,5 @@
+var webpack = require('webpack');
+
 const BABEL_PRESETS = ['es2015'];
 const BABEL_PLUGINS = ['transform-react-jsx'];
 
@@ -28,6 +30,21 @@ module.exports = function(grunt) {
                     cwd: 'src/test/javascript',
                     src: ['**/*.js'],
                     dest: 'target/javascript/test'
+                }]
+            }
+        },
+        copy: {
+            bootstrap: {
+                files: [{
+                    expand: true,
+                    cwd: 'node_modules/bootstrap/dist/css',
+                    src: ['**/*.css'],
+                    dest: 'target/classes/static/bootstrap/css'
+                }, {
+                    expand: true,
+                    cwd: 'node_modules/bootstrap/dist/fonts',
+                    src: ['**/*'],
+                    dest: 'target/classes/static/bootstrap/fonts'
                 }]
             }
         },
@@ -68,6 +85,13 @@ module.exports = function(grunt) {
                 entry: {
                     main: './src/main/javascript/main.js'
                 },
+                plugins: [
+                    new webpack.ProvidePlugin({
+                        '$': 'jquery',
+                        'jQuery': 'jquery',
+                        'window.jQuery': 'jquery'
+                    })
+                ],
                 output: {
                     path: 'target/classes/static/js',
                     filename: '[name].js',
@@ -98,6 +122,6 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('build', ['eslint:main', 'jscpd:main', 'webpack:main', 'i18next']);
+    grunt.registerTask('build', ['eslint:main', 'jscpd:main', 'webpack:main', 'i18next', 'copy']);
     grunt.registerTask('test', ['babel:main', 'babel:test', 'mochaTest:test']);
 };
