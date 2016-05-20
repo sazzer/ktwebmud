@@ -42,6 +42,12 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        i18next: {
+            locales: {
+                src: ['src/main/languages/**/locales'],
+                dest: 'target/classes/static/locales/webmud'
+            }
+        },
         jscpd: {
             main: {
                 path: 'src/main/javascript'
@@ -92,6 +98,6 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('build', ['eslint:main', 'jscpd:main', 'webpack:main']);
+    grunt.registerTask('build', ['eslint:main', 'jscpd:main', 'webpack:main', 'i18next']);
     grunt.registerTask('test', ['babel:main', 'babel:test', 'mochaTest:test']);
 };
