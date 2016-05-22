@@ -10,7 +10,7 @@ function mapDispatchToProps(dispatch) {
 
 export const Actions = connect(null, mapDispatchToProps)(({increment, decrement}) => (
     <div>
-        <button onClick={increment}>Increment</button>
-        <button onClick={decrement}>Decrement</button>
+        <button className="increment" onClick={increment}>Increment</button>
+        <button className="decrement" onClick={decrement}>Decrement</button>
     </div>
 ));

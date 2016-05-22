@@ -1,7 +1,9 @@
 package uk.co.grahamcox.webmud.verification.webdriver
 
+import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
 import org.slf4j.LoggerFactory
+import uk.co.grahamcox.webmud.verification.page.WebappPage
 
 /**
  * Context used to manage the webdriver for the tests
@@ -17,6 +19,13 @@ class WebDriverContext(private val webDriverFactory: WebDriverFactory,
     /** The webdriver we are using */
     private var webdriver: WebDriver? = null
 
+    /** The Webapp Page Model */
+    val webappPage: WebappPage
+        get() {
+            val wd = webdriver ?: throw IllegalStateException("No WebDriver has been opened")
+            val body = wd.findElement(By.tagName("body"))
+            return WebappPage(body)
+        }
     /**
      * Open the WebDriver onto the given URL, creating it if needed
      */

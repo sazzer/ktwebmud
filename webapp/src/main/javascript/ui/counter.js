@@ -1,8 +1,10 @@
 import React from 'react';
+import {Actions} from './actions';
 
 export const Counter = ({count}) => (
     <div className="counter">
-        Count: {count}
+        Count: <span className="count">{count}</span>
+        <Actions />
     </div>
 );
 

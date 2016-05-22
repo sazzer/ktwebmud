@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {MainScreen} from './main';
 import {CounterContainer} from './counterContainer';
-import {Actions} from './actions';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware, compose} from 'redux';
 import createLogger from 'redux-logger';
@@ -42,7 +41,6 @@ export function renderUi() {
                 <Provider store={store}>
                     <div>
                         <CounterContainer />
-                        <Actions />
                     </div>
                 </Provider>
             </div>

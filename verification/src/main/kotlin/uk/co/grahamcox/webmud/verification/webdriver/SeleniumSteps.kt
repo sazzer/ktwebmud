@@ -1,4 +1,4 @@
-package uk.co.grahamcox.webmud.verification.steps
+package uk.co.grahamcox.webmud.verification.webdriver
 
 import cucumber.api.java.en.Given
 import org.springframework.beans.factory.annotation.Autowired
