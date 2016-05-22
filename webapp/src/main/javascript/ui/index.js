@@ -4,10 +4,15 @@ import {MainScreen} from './main';
 import {CounterContainer} from './counterContainer';
 import {Actions} from './actions';
 import {Provider} from 'react-redux';
-import {createStore, applyMiddleware} from 'redux';
+import {createStore, applyMiddleware, compose} from 'redux';
 import createLogger from 'redux-logger';
 
-const store = createStore((state = {count: 0}, action) => {
+const logger = createLogger({
+    duration: true,
+    diff: true
+});
+
+const reducer =  (state = {count: 0}, action) => {
     switch (action.type) {
         case 'INCREMENT':
             return {
@@ -20,10 +25,14 @@ const store = createStore((state = {count: 0}, action) => {
         default:
             return state;
     }
-}, applyMiddleware(createLogger({
-    duration: true,
-    diff: true
-})));
+};
+
+const store = createStore(reducer,
+    compose(
+        applyMiddleware(logger),
+        window.devToolsExtension ? window.devToolsExtension() : f => f
+    )
+);
 
 export function renderUi() {
     ReactDOM.render(
