@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <util:map id="webDriverClasses" key-type="java.lang.String" value-type="java.lang.Class">
+        <entry key="chrome" value="org.openqa.selenium.chrome.ChromeDriver" />
+        <entry key="firefox" value="org.openqa.selenium.firefox.FirefoxDriver" />
+        <entry key="edge" value="org.openqa.selenium.edge.EdgeDriver" />
+        <entry key="ie" value="org.openqa.selenium.ie.InternetExplorerDriver" />
+        <entry key="safari" value="org.openqa.selenium.safari.SafariDriver" />
+    </util:map>
+
+    <bean id="webDriverFactory" class="uk.co.grahamcox.webmud.verification.webdriver.WebDriverFactory">
+        <constructor-arg name="driverClasses" ref="webDriverClasses" />
+        <constructor-arg name="defaultName" value="${webdriver.browser}" />
+    </bean>
+
+    <bean id="webDriverContext" class="uk.co.grahamcox.webmud.verification.webdriver.WebDriverContext" destroy-method="close">
+        <constructor-arg name="webDriverFactory" ref="webDriverFactory" />
+        <constructor-arg name="urlBase" value="${url.webapp}" />
+    </bean>
+</beans>
