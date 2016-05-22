@@ -46,7 +46,7 @@ class WebDriverContext(private val webDriverFactory: WebDriverFactory,
     fun close() {
         webdriver?.apply {
             LOG.debug("Closing WebDriver")
-            close()
+            quit()
         }
     }
 }
