@@ -1,17 +1,6 @@
-export function reducer(state = 0, action) {
-    let newState;
+import objReducer from 'reduxr-obj-reducer';
 
-    switch (action.type) {
-        case 'INCREMENT':
-            newState = state + 1;
-            break;
-        case 'DECREMENT':
-            newState = state - 1;
-            break;
-        default:
-            newState = state;
-            break;
-    }
-    
-    return newState;
-}
+export const reducer = objReducer(0, {
+    INCREMENT: (state) => state + 1,
+    DECREMENT: (state) => state - 1
+});
