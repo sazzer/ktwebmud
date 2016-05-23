@@ -4,7 +4,7 @@ import {Counter} from './counter';
 
 function mapStateToProps(state) {
     return {
-        count: state.count
+        count: state.get('count')
     };
 }
 
