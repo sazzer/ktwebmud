@@ -1,5 +1,5 @@
 import React from 'react';
-import {Actions} from './actions';
+import {Actions} from './counterButtons';
 
 export const Counter = ({count}) => (
     <div className="counter">
