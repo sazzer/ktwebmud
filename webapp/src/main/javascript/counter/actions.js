@@ -1,7 +1,5 @@
-export function increment() {
-    return {type: 'INCREMENT'};
-}
+import namespacedActions from 'redux-namespaced-actions';
+const { createAction } = namespacedActions('Counter');
 
-export function decrement() {
-    return {type: 'DECREMENT'};
-}
+export const increment = createAction('INCREMENT');
+export const decrement = createAction('DECREMENT');
