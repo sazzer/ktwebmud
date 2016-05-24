@@ -1,5 +1,5 @@
 import React from 'react';
-import {SocialLink} from '../../components/social/socialLink'
+import {SocialLinksContainer} from './socialLinksContainer'
 /**
  * The footer bar of the application
  * @constructor
@@ -7,19 +7,9 @@ import {SocialLink} from '../../components/social/socialLink'
 export const FooterBar = () => (
     <footer className="footer">
         <div className="container">
-            <p className="text-muted">
-                <ul className="list-inline text-center">
-                    <li>
-                        <SocialLink name="facebook" />
-                    </li>
-                    <li>
-                        <SocialLink name="google" />
-                    </li>
-                    <li>
-                        <SocialLink name="twitter" />
-                    </li>
-                </ul>
-            </p>
+            <div className="text-muted">
+                <SocialLinksContainer />
+            </div>
         </div>
     </footer>
 );
