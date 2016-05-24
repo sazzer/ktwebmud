@@ -1,0 +1,11 @@
+{
+  "header": {
+    "branding": "KtWebMud",
+    "encyclopaedia": {
+      "header": "Encyclopaedia"
+    },
+    "login": {
+      "header": "Login"
+    }
+  }
+}

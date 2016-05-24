@@ -8,12 +8,12 @@ import store from '../redux';
 export function renderUi() {
     ReactDOM.render(
         (
-            <div>
-                <MainScreen />
-                <Provider store={store}>
+            <Provider store={store}>
+                <div>
+                    <MainScreen />
                     <CounterContainer />
-                </Provider>
-            </div>
+                </div>
+            </Provider>
         ), document.getElementById('application')
     );
 }

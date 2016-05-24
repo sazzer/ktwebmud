@@ -1,3 +1,5 @@
 {
-    "header": "This is the header"
+    "ui": {
+        "toggleNavigation": "Toggle Navigation"
+    }
 }
