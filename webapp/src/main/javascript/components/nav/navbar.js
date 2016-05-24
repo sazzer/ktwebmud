@@ -30,5 +30,5 @@ export const NavBar = ({brandKey, children}) => (
  */
 NavBar.propTypes = {
     brandKey: React.PropTypes.string.isRequired,
-    children: React.PropTypes.array.isRequired
+    children: React.PropTypes.any.isRequired
 };

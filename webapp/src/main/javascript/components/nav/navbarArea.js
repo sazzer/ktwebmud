@@ -16,5 +16,5 @@ export const NavBarArea = ({children}) => (
  * @property children {Array} The children to show in this navbar area
  */
 NavBarArea.propTypes = {
-    children: React.PropTypes.array.isRequired
+    children: React.PropTypes.any.isRequired
 };

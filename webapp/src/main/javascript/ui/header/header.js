@@ -1,5 +1,7 @@
 import React from 'react';
-import {NavBar, NavBarArea, NavBarLink, NavBarDropdown} from '../components/nav';
+import {NavBar, NavBarArea, NavBarLink, NavBarDropdown} from '../../components/nav';
+import {UserLink} from './userLink';
+
 /**
  * The header bar of the application
  * @constructor
@@ -12,7 +14,7 @@ export const HeaderBar = () => (
                 <NavBarLink active={false} labelKey="header.login.header" />
                 <NavBarLink active={false} labelKey="header.login.header" />
             </NavBarDropdown>
-            <NavBarLink active={false} labelKey="header.login.header" />
+            <UserLink />
         </NavBarArea>
     </NavBar>
 );

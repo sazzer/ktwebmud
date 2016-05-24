@@ -24,5 +24,5 @@ export const NavBarDropdown = ({labelKey, children}) => (
  */
 NavBarDropdown.propTypes = {
     labelKey: React.PropTypes.string.isRequired,
-    children: React.PropTypes.array.isRequired
+    children: React.PropTypes.any.isRequired
 };

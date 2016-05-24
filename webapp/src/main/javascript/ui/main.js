@@ -1,6 +1,6 @@
 import React from 'react';
 import i18next from 'i18next';
-import {HeaderBar} from './header';
+import {HeaderBar} from './header/header';
 /**
  * The actual main screen of the application
  * @constructor

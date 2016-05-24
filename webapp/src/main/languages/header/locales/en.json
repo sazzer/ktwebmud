@@ -5,7 +5,9 @@
       "header": "Encyclopaedia"
     },
     "login": {
-      "header": "Login"
+      "header": "Login",
+      "profile": "Profile",
+      "logout": "Log out"
     }
   }
 }
