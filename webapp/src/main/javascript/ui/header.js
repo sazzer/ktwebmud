@@ -1,6 +1,9 @@
 import React from 'react';
 import {NavBar, NavBarArea, NavBarLink, NavBarDropdown} from '../components/nav';
-
+/**
+ * The header bar of the application
+ * @constructor
+ */
 export const HeaderBar = () => (
     <NavBar brandKey="header.branding">
         <NavBarArea>
