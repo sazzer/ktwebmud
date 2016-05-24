@@ -46,6 +46,19 @@ module.exports = function(grunt) {
                     src: ['**/*'],
                     dest: 'target/classes/static/bootstrap/fonts'
                 }]
+            },
+            fontawesome: {
+                files: [{
+                    expand: true,
+                    cwd: 'node_modules/font-awesome/css',
+                    src: ['**/*.css'],
+                    dest: 'target/classes/static/font-awesome/css'
+                }, {
+                    expand: true,
+                    cwd: 'node_modules/font-awesome/fonts',
+                    src: ['**/*'],
+                    dest: 'target/classes/static/font-awesome/fonts'
+                }]
             }
         },
         eslint: {

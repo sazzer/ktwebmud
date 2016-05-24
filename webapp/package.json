@@ -4,6 +4,7 @@
   "description": "WebMud Client Assets",
   "dependencies": {
     "bootstrap": "^3.3.6",
+    "font-awesome": "^4.6.1",
     "i18next": "^3.1.0",
     "i18next-browser-languagedetector": "^0.3.0",
     "i18next-xhr-backend": "^0.5.4",
