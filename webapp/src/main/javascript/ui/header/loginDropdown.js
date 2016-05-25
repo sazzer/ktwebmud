@@ -1,5 +1,6 @@
 import React from 'react';
-import {NavBarDropdown, NavBarLink} from '../../components/nav';
+import {NavBarDropdown} from '../../components/nav';
+import {SocialLoginButton} from '../../components/social/socialLoginButton';
 
 /**
  * The Dropdown to display on the header bar for when the user is not logged in yet
@@ -7,7 +8,9 @@ import {NavBarDropdown, NavBarLink} from '../../components/nav';
  */
 export const LoginDropdown = () => (
     <NavBarDropdown labelKey="header.login.header">
-        <NavBarLink active={false} labelKey="header.login.profile" />
+        <SocialLoginButton name="facebook" />
+        <SocialLoginButton name="google" />
+        <SocialLoginButton name="twitter" />
     </NavBarDropdown>
 );
 

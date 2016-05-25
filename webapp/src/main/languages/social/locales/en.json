@@ -4,6 +4,11 @@
       "facebook": "Facebook",
       "google": "Google+",
       "twitter": "Twitter"
+    },
+    "login": {
+      "facebook": "Sign In with Facebook",
+      "google": "Sign In with Google+",
+      "twitter": "Sign In with Twitter"
     }
   }
 }
