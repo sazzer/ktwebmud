@@ -1,14 +1,13 @@
 import React from 'react';
-import i18next from 'i18next';
 
 /**
  * React Component representing a link on a navigation bar
  * @constructor
  */
-export const NavBarLink = ({active, labelKey}) => (
+export const NavBarLink = ({active, children}) => (
     <li className={active ? 'active' : ''}>
         <a href="#">
-            {i18next.t(labelKey)}
+            {children}
             {active ? <span className="sr-only">(current)</span> : ''}
         </a>
     </li>
@@ -18,9 +17,9 @@ export const NavBarLink = ({active, labelKey}) => (
  * Properties that the NavBarLink component supports
  * @type Object
  * @property active {Boolean} Whether this is the currently active link
- * @property labelKey {String} Message key for the label of the link
+ * @property children {Any} Content of the link
  */
 NavBarLink.propTypes = {
     active: React.PropTypes.bool,
-    labelKey: React.PropTypes.string.isRequired
+    children: React.PropTypes.any.isRequired
 };
