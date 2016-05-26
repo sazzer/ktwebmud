@@ -4,14 +4,14 @@ import {SocialLinks} from './socialLinks';
 
 /**
  * Retrieve from the Redux state the social links that are to be enabled
- * @param state the Redux state
- * @returns the properties to provide to the Social Links component
+ * @param {Map} state the Redux state
+ * @returns {Object} the properties to provide to the Social Links component
  */
 function mapStateToProps(state) {
     return {
         links: {
-            facebook: 'http://www.facebook.com', 
-            google: 'http://www.google.com', 
+            facebook: 'http://www.facebook.com',
+            google: 'http://www.google.com',
             twitter: 'http://www.twitter.com'
         }
     };
