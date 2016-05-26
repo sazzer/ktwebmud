@@ -1,5 +1,5 @@
 import React from 'react';
-import i18next from 'i18next';
+import {Message} from '../i18n/message';
 
 /**
  * React Component representing a navigation header bar
@@ -10,15 +10,21 @@ export const NavBar = ({brandKey, children}) => (
         <div className="container-fluid">
             <div className="navbar-header">
                 <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-header-toggle" aria-expanded="false">
-                    <span className="sr-only">{i18next.t('ui.toggleNavigation')}</span>
+                    <span className="sr-only">
+                        <Message message="ui.toggleNavigation" />
+                    </span>
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>
                 </button>
-                <a className="navbar-brand" href="#">{i18next.t(brandKey)}</a>
+                <a className="navbar-brand" href="#">
+                    <Message message={brandKey} />
+                </a>
             </div>
 
+            <div className="test-navbar-child-container">
             {children}
+            </div>
         </div>
     </nav>
 );
@@ -30,5 +36,5 @@ export const NavBar = ({brandKey, children}) => (
  */
 NavBar.propTypes = {
     brandKey: React.PropTypes.string.isRequired,
-    children: React.PropTypes.any.isRequired
+    children: React.PropTypes.any
 };
