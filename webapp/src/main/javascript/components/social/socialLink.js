@@ -1,5 +1,5 @@
 import React from 'react';
-import i18next from 'i18next';
+import {Message} from '../i18n/message';
 
 /**
  * React Component representing a link to a social site
@@ -7,7 +7,7 @@ import i18next from 'i18next';
  */
 export const SocialLink = ({name}) => (
     <a href="#">
-        <span className={['fa', `fa-${name}`].join(' ')}></span> {i18next.t(`social.names.${name}`)}
+        <span className={['fa', `fa-${name}`].join(' ')}></span> <Message message={`social.names.${name}`} />
     </a>
 );
 
