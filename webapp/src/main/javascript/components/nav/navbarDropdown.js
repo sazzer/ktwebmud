@@ -1,5 +1,5 @@
 import React from 'react';
-import i18next from 'i18next';
+import {Message} from '../i18n/message';
 
 /**
  * React Component representing a dropdown on a navigation bar
@@ -8,7 +8,7 @@ import i18next from 'i18next';
 export const NavBarDropdown = ({labelKey, children}) => (
     <li className="dropdown">
         <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            {i18next.t(labelKey)} <span className="caret"></span>
+            <Message message={labelKey} /> <span className="caret"></span>
         </a>
         <ul className="dropdown-menu">
             {children}
