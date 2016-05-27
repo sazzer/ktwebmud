@@ -11,7 +11,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         babel: {
             options: {
-                sourceMap: false,
+                sourceMap: true,
                 plugins: BABEL_PLUGINS,
                 presets: BABEL_PRESETS
             },
@@ -83,15 +83,20 @@ module.exports = function(grunt) {
                 path: 'src/main/javascript'
             }
         },
-        mochaTest: {
+        mocha_istanbul: {
             options: {
                 reporter: 'spec',
-                require: 'target/javascript/test/setup.js'
+                require: 'target/javascript/test/setup.js',
+                scriptPath: 'node_modules/.bin/babel-istanbul',
+                reportFormats: ['lcov', 'text-summary'],
+                istanbulOptions: ['--include-all-sources', 'true']
             },
             test: {
-                src: [
-                    'target/javascript/test/**/*.spec.js'
-                ]
+                src: 'target/javascript/test/**/*.spec.js',
+                options: {
+                    coverageFolder: 'target/site/istanbul',
+                    root: 'target/javascript/node_modules/webmud'
+                }
             }
         },
         webpack: {
@@ -137,5 +142,5 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('build', ['eslint:main', 'jscpd:main', 'webpack:main', 'i18next', 'copy']);
-    grunt.registerTask('test', ['babel:main', 'babel:test', 'mochaTest:test']);
+    grunt.registerTask('test', ['babel:main', 'babel:test', 'mocha_istanbul:test']);
 };

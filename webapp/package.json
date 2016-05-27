@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^6.0.4",
+    "babel-istanbul": "^0.8.0",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-react-jsx": "^6.8.0",
     "babel-preset-es2015": "^6.9.0",
@@ -35,7 +36,7 @@
     "grunt-eslint": "^18.1.0",
     "grunt-i18next": "0.0.2",
     "grunt-jscpd": "0.0.11",
-    "grunt-mocha-test": "^0.12.7",
+    "grunt-mocha-istanbul": "^4.0.2",
     "grunt-webpack": "^1.0.11",
     "jit-grunt": "^0.10.0",
     "mocha": "^2.4.5",
