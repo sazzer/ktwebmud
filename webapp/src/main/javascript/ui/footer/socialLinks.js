@@ -6,7 +6,7 @@ import {SocialLink} from '../../components/social/socialLink'
  */
 export const SocialLinks = ({links}) => {
     const linkElements = Object.keys(links)
-        .map((link) => <li><SocialLink name={link} /></li>);
+        .map((link) => <li><SocialLink name={link} url={links[link]} /></li>);
     
     const result = <ul className="list-inline text-center">
         {linkElements}
