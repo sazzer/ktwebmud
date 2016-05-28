@@ -22,4 +22,6 @@
     <bean class="uk.co.grahamcox.webmud.webapp.DebugController">
         <constructor-arg name="clock" ref="clock" />
     </bean>
+
+    <bean class="uk.co.grahamcox.webmud.webapp.social.SocialController" />
 </beans>
