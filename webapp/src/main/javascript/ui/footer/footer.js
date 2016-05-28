@@ -7,7 +7,7 @@ import {SocialLinksContainer} from './socialLinksContainer'
 export const FooterBar = () => (
     <footer className="footer">
         <div className="container">
-            <div className="text-muted">
+            <div className="text-muted socialLinks">
                 <SocialLinksContainer />
             </div>
         </div>

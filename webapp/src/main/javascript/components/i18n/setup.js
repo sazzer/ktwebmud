@@ -32,11 +32,7 @@ export function setup() {
                 ns: 'webmud',
                 defaultNS: 'webmud'
             }, (err, t) => {
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve(t);
-                }
+                resolve(t);
             });
     });
 }
