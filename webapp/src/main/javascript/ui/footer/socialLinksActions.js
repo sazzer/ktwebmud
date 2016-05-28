@@ -4,11 +4,6 @@ const { createAction } = namespacedActions('SocialLinks');
 /**
  * Redux action to load the social links
  */
-export const loadSocialLinks = createAction('LOAD_SOCIAL_LINKS', () => new Promise((resolve, reject) => {
-        resolve({
-            'facebook' : 'http://www.facebook.com',
-            'twitter' : 'http://www.twitter.com',
-            'google' : 'http://plus.google.com'
-        });
-    })
+export const loadSocialLinks = createAction('LOAD_SOCIAL_LINKS', () => fetch('/api/social')
+    .then((response) => response.json())
 );

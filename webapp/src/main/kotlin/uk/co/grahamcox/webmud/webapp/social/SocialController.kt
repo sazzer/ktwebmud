@@ -17,8 +17,8 @@ class SocialController {
      */
     @RequestMapping(method = arrayOf(RequestMethod.GET))
     fun getSocialDetails() : Map<String, URI> = mapOf(
-            "facebook" to URI("http://www.facebook.com"),
             "twitter" to URI("http://www.twitter.com"),
+            "facebook" to URI("http://www.facebook.com"),
             "google" to URI("http://plus.google.com")
     )
 }

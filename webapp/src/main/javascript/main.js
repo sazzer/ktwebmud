@@ -1,4 +1,5 @@
 import 'bootstrap';
+import 'whatwg-fetch';
 
 import {renderUi} from './ui';
 import {setup} from './components/i18n/setup';
