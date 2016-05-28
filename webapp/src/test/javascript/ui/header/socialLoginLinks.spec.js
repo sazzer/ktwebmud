@@ -5,8 +5,8 @@ import {SocialLoginLinks} from 'webmud/ui/header/socialLoginLinks';
 
 describe('<SocialLoginLinks />', function() {
     describe('With no links', function() {
-        const links = {
-        };
+        const links = [
+        ];
         const wrapper = shallow(<SocialLoginLinks links={links} />);
         it('renders correctly', function() {
             expect(wrapper.find('div')).to.be.empty;
@@ -14,9 +14,9 @@ describe('<SocialLoginLinks />', function() {
     });
 
     describe('With one link', function() {
-        const links = {
-            'facebook': 'http://www.facebook.com'
-        };
+        const links = [
+            'facebook'
+        ];
         const wrapper = shallow(<SocialLoginLinks links={links} />);
         it('renders correctly', function() {
             expect(wrapper.find('div')).to.have.exactly(1).descendants('SocialLoginButton');
@@ -25,11 +25,11 @@ describe('<SocialLoginLinks />', function() {
     });
 
     describe('With several links', function() {
-        const links = {
-            'facebook': 'http://www.facebook.com',
-            'google': 'http://plus.google.com',
-            'twitter': 'http://www.twitter.com'
-        };
+        const links = [
+            'facebook',
+            'google',
+            'twitter'
+        ];
         const wrapper = shallow(<SocialLoginLinks links={links} />);
         it('renders correctly', function() {
             expect(wrapper.find('div')).to.have.exactly(3).descendants('SocialLoginButton');

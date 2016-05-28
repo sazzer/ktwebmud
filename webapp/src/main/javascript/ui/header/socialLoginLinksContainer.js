@@ -9,11 +9,7 @@ import {SocialLoginLinks} from './socialLoginLinks';
  */
 function mapStateToProps(state) {
     return {
-        links: {
-            facebook: 'http://www.facebook.com',
-            google: 'http://www.google.com',
-            twitter: 'http://www.twitter.com'
-        }
+        links: state.get('socialLoginLinks').toArray()
     };
 }
 

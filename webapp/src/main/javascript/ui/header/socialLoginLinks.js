@@ -6,12 +6,12 @@ import {SocialLoginButton} from '../../components/social/socialLoginButton';
  * @constructor
  */
 export const SocialLoginLinks = ({links}) => {
-    const linkElements = Object.keys(links)
+    const linkElements = links
         .map((link) => <SocialLoginButton name={link} />);
 
     return <div>{linkElements}</div>;
 };
 
 SocialLoginLinks.propTypes = {
-    links: React.PropTypes.object.isRequired
+    links: React.PropTypes.array.isRequired
 };

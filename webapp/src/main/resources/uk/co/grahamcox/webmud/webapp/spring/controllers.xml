@@ -24,4 +24,6 @@
     </bean>
 
     <bean class="uk.co.grahamcox.webmud.webapp.social.SocialController" />
+
+    <bean class="uk.co.grahamcox.webmud.webapp.ExternalAuthenticationController" />
 </beans>
