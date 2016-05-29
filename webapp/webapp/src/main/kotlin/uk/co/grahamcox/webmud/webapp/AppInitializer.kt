@@ -1,4 +1,4 @@
-package uk.co.grahamcox.worldbuilder.webapp
+package uk.co.grahamcox.webmud.webapp
 
 import org.slf4j.LoggerFactory
 import org.springframework.web.WebApplicationInitializer
