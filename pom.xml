@@ -44,7 +44,7 @@
         <version.jackson>2.7.4</version.jackson>
         <version.jdk>1.8</version.jdk>
         <version.kotlin>1.0.2</version.kotlin>
-        <version.maven>3.2.1</version.maven>
+        <version.maven>3.2.5</version.maven>
         <version.slf4j>1.7.21</version.slf4j>
         <version.spring>4.2.6.RELEASE</version.spring>
     </properties>
