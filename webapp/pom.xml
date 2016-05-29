@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <name>WebMud Webapp</name>
     <modules>
+        <module>javascript</module>
         <module>webapp</module>
     </modules>
 </project>
