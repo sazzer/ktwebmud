@@ -17,8 +17,11 @@ class SocialControllerIT : SpringTestBase() {
     fun getSocialLinks() {
         perform(MockMvcRequestBuilders.get("/api/social"))
                 .andExpect(MockMvcResultMatchers.content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-                .andExpect(MockMvcResultMatchers.jsonPath("facebook").value("http://www.facebook.com"))
-                .andExpect(MockMvcResultMatchers.jsonPath("twitter").value("http://www.twitter.com"))
-                .andExpect(MockMvcResultMatchers.jsonPath("google").value("http://plus.google.com"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].id").value("facebook"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].link").value("http://www.facebook.com"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].id").value("twitter"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].link").value("http://www.twitter.com"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[2].id").value("google"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[2].link").value("http://plus.google.com"))
     }
 }

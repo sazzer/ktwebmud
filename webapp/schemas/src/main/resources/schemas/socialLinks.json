@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Social Links",
+    "description": "Links to social networking sites",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "description": "The site this link is for",
+                "type": "string"
+            },
+            "link": {
+                "description": "The actual link to the site",
+                "type": "string"
+            }
+        },
+        "required": [
+            "id",
+            "link"
+        ]
+    },
+    "uniqueItems": true
+}

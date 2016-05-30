@@ -3,6 +3,7 @@ package uk.co.grahamcox.webmud.webapp.social
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RestController
+import uk.co.grahamcox.ktwebmud.webapp.schemas.SocialLinkModel
 import java.net.URI
 
 /**
@@ -13,12 +14,12 @@ import java.net.URI
 class SocialController {
     /**
      * Get the details of the social sites that are connected
-     * @return a map of social site name to the URL that links to that site
+     * @return a collection of social site name and the URL that links to that site
      */
     @RequestMapping(method = arrayOf(RequestMethod.GET))
-    fun getSocialDetails() : Map<String, URI> = mapOf(
-            "twitter" to URI("http://www.twitter.com"),
-            "facebook" to URI("http://www.facebook.com"),
-            "google" to URI("http://plus.google.com")
+    fun getSocialDetails() : List<SocialLinkModel> = listOf(
+            SocialLinkModel().withId("facebook").withLink("http://www.facebook.com"),
+            SocialLinkModel().withId("twitter").withLink("http://www.twitter.com"),
+            SocialLinkModel().withId("google").withLink("http://plus.google.com")
     )
 }
