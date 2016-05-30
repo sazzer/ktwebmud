@@ -11,6 +11,7 @@
     <mvc:resources mapping="/static/**" location="classpath:/static/" order="1" />
     <mvc:view-controller path="/" view-name="/static/index.html" />
 
-    <mvc:resources mapping="/api/docs/swagger-ui/**" location="classpath:/META-INF/resources/webjars/swagger-ui/2.1.8-M1/" order="1"/>
+    <mvc:resources mapping="/api/docs/swagger-ui/**" location="classpath:/META-INF/resources/webjars/swagger-ui/2.1.4/" order="1"/>
+    <mvc:resources mapping="/api/docs/schemas/**" location="classpath:/schemas/" order="1" />
     <mvc:redirect-view-controller path="/api/docs/swagger-ui" redirect-url="/api/docs/swagger-ui/index.html?url=/api/docs/swagger" />
 </beans>
