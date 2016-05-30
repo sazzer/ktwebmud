@@ -157,6 +157,9 @@
                             <classNameSuffix>Model</classNameSuffix>
                             <generateBuilders>true</generateBuilders>
                             <useCommonsLang3>true</useCommonsLang3>
+                            <dateTimeType>java.time.Instant</dateTimeType>
+                            <dateType>java.time.LocalDate</dateType>
+                            <timeType>java.time.LocalTime</timeType>
                         </configuration>
                     </execution>
                 </executions>
