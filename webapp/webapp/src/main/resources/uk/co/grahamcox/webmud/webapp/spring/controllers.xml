@@ -18,6 +18,8 @@
         </websocket:message-converters>
      </websocket:message-broker>
 
+    <bean class="uk.co.grahamcox.ktwebmud.webapp.swagger.SwaggerSchemaBuilder" />
+    <bean class="uk.co.grahamcox.ktwebmud.webapp.swagger.SwaggerController" />
 
     <bean class="uk.co.grahamcox.webmud.webapp.DebugController">
         <constructor-arg name="clock" ref="clock" />
